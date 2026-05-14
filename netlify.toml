@@ -4,7 +4,7 @@
 
 [functions]
   node_bundler = "esbuild"
-  included_files = ["cookies/*.txt"]
+  included_files = ["netlify/functions/cookies/*.txt"]
 
 [[headers]]
   for = "/*"
