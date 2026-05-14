@@ -2,9 +2,7 @@
   publish = "public"
   functions = "netlify/functions"
 
-[functions]
-  node_bundler = "esbuild"
-  included_files = ["netlify/functions/cookies/*.txt"]
+# [functions] bölməsini tamamilə silin (və ya şərhə alın)
 
 [[headers]]
   for = "/*"
