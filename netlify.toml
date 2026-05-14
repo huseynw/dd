@@ -2,8 +2,6 @@
   publish = "public"
   functions = "netlify/functions"
 
-# [functions] bölməsini tamamilə silin (və ya şərhə alın)
-
 [[headers]]
   for = "/*"
   [headers.values]
