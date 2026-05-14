@@ -115,8 +115,11 @@ async function analyzeMedia() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url, platform: state.platform })
     });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`HTTP ${res.status}: ${text.slice(0, 100)}`);
+    }
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Analyze failed');
     renderPreview(data);
     setStatus(t('analyzed'));
   } catch (error) {
