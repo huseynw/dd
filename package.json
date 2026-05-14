@@ -1,0 +1,13 @@
+{
+  "name": "husevn-downloader",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium multi-platform downloader for Netlify Functions using yt-dlp.",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Static build ready'"
+  },
+  "devDependencies": {
+    "netlify-cli": "latest"
+  }
+}
