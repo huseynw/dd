@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070914">
+  <title>HUSEVN DOWNLOADER</title>
+  <meta name="description" content="YouTube, TikTok, Instagram, Pinterest və Facebook üçün premium multi-platform downloader.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <nav class="navbar">
+      <div class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+        <span>HUSEVN DOWNLOADER</span>
+      </div>
+      <div class="nav-actions">
+        <select id="languageSelect" class="lang-select" aria-label="Language">
+          <option value="az">AZ</option>
+          <option value="tr">TR</option>
+          <option value="en">EN</option>
+          <option value="ru">RU</option>
+        </select>
+        <a href="#download" class="btn btn-primary"><i class="fa-solid fa-download"></i><span data-i18n="navStart">Başla</span></a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="kicker"><i class="fa-solid fa-shield-halved"></i><span data-i18n="kicker">Cookies dəstəkli premium yükləmə paneli</span></div>
+        <h1><span>HUSEVN</span><span class="gradient-text">DOWNLOADER</span></h1>
+        <p data-i18n="heroText">YouTube, TikTok, Instagram, Pinterest və Facebook kontentlərini yüksək keyfiyyətdə analiz et, format seç, canlı progress və sürət göstəricisi ilə yüklə.</p>
+        <div class="hero-buttons">
+          <a href="#download" class="btn btn-primary"><i class="fa-solid fa-wand-magic-sparkles"></i><span data-i18n="heroCta">Downloader aç</span></a>
+          <a href="#features" class="btn btn-ghost"><i class="fa-solid fa-circle-info"></i><span data-i18n="heroSecondary">Xüsusiyyətlər</span></a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-hidden="true">
+        <div class="preview-card main">
+          <div class="mock-thumb"><i class="fa-solid fa-play"></i></div>
+          <div class="mock-lines"><span></span><span></span><span></span></div>
+        </div>
+        <div class="preview-card float-a">
+          <div class="stat-line"><span>Download</span><strong>73%</strong></div>
+          <div class="progress-track"><div class="progress-fill"></div></div>
+        </div>
+        <div class="preview-card float-b">
+          <div class="stat-line"><span>Speed</span><strong>8.4 MB/s</strong></div>
+          <div class="stat-line"><span>Quality</span><strong>2160p</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <main id="download">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="downloadTitle">Platformanı seç</h2>
+          <p data-i18n="downloadDesc">Linki daxil et, media məlumatlarını çıxart, sonra format və keyfiyyət seçərək yükləməni başlat.</p>
+        </div>
+      </div>
+
+      <section class="downloader">
+        <aside class="platform-tabs" id="platformTabs">
+          <button class="platform-tab active" data-platform="youtube"><i class="fa-brands fa-youtube"></i><span><strong>YouTube</strong><small data-i18n="ytSmall">MP3 və video</small></span></button>
+          <button class="platform-tab" data-platform="tiktok"><i class="fa-brands fa-tiktok"></i><span><strong>TikTok</strong><small data-i18n="ttSmall">Video, MP3, şəkil</small></span></button>
+          <button class="platform-tab" data-platform="instagram"><i class="fa-brands fa-instagram"></i><span><strong>Instagram</strong><small data-i18n="igSmall">Reels və post</small></span></button>
+          <button class="platform-tab" data-platform="pinterest"><i class="fa-brands fa-pinterest"></i><span><strong>Pinterest</strong><small data-i18n="pinSmall">Video və şəkil</small></span></button>
+          <button class="platform-tab" data-platform="facebook"><i class="fa-brands fa-facebook"></i><span><strong>Facebook</strong><small data-i18n="fbSmall">Video və şəkil</small></span></button>
+        </aside>
+
+        <div class="workspace-card">
+          <form id="downloadForm" class="form-grid">
+            <label class="label">
+              <span data-i18n="urlLabel">Media linki</span>
+              <input id="mediaUrl" class="input" type="url" placeholder="https://..." required>
+            </label>
+
+            <div class="media-actions">
+              <button type="button" id="analyzeBtn" class="btn btn-ghost"><i class="fa-solid fa-magnifying-glass-chart"></i><span data-i18n="analyze">Analiz et</span></button>
+              <button type="submit" id="downloadBtn" class="btn btn-primary"><i class="fa-solid fa-cloud-arrow-down"></i><span data-i18n="download">Yüklə</span></button>
+            </div>
+
+            <div id="youtubeOptions" class="platform-options">
+              <div class="option-grid">
+                <label class="chip"><input type="radio" name="ytMode" value="mp3" checked><span><i class="fa-solid fa-music"></i><span data-i18n="ytMp3">MP3 + thumbnail</span></span></label>
+                <label class="chip"><input type="radio" name="ytMode" value="video"><span><i class="fa-solid fa-film"></i><span data-i18n="ytVideo">Video</span></span></label>
+              </div>
+              <div class="quality-row">
+                <label class="label">
+                  <span data-i18n="quality">Keyfiyyət</span>
+                  <select id="qualitySelect" class="select"><option value="best">Best</option></select>
+                </label>
+                <label class="label">
+                  <span data-i18n="audioMode">Səs rejimi</span>
+                  <select id="audioMode" class="select">
+                    <option value="with-audio" data-i18n="withAudio">Səsli</option>
+                    <option value="no-audio" data-i18n="noAudio">Səssiz</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div id="genericOptions" class="platform-options hidden">
+              <div class="option-grid">
+                <label class="chip"><input type="radio" name="genericMode" value="video" checked><span><i class="fa-solid fa-video"></i><span data-i18n="videoOption">Video</span></span></label>
+                <label class="chip"><input type="radio" name="genericMode" value="mp3"><span><i class="fa-solid fa-music"></i><span data-i18n="mp3Option">MP3</span></span></label>
+              </div>
+              <p class="status-box" data-i18n="genericHint">Şəkil/post tipli kontent analizdən sonra ayrıca seçim kartları kimi görünəcək.</p>
+            </div>
+          </form>
+
+          <div id="mediaPreview" class="media-preview">
+            <img id="previewImage" src="" alt="Preview">
+            <div class="media-meta">
+              <h3 id="previewTitle">Media title</h3>
+              <p id="previewDesc">Metadata burada görünəcək.</p>
+              <div id="assetGrid" class="asset-grid"></div>
+            </div>
+          </div>
+
+          <div id="progressPanel" class="progress-panel">
+            <div class="progress-top"><span id="progressStatus">Preparing...</span><strong id="progressPercent">0%</strong></div>
+            <div class="progress-track"><div id="downloadProgress" class="progress-fill"></div></div>
+            <div class="progress-top" style="margin-top:12px"><span><i class="fa-solid fa-gauge-high"></i> <span data-i18n="speed">Sürət</span>: <strong id="speedValue">0 MB/s</strong></span><span id="etaValue">ETA: --</span></div>
+          </div>
+
+          <div id="statusBox" class="status-box" data-i18n="statusReady">Hazırdır. Link daxil edib analiz edin.</div>
+        </div>
+      </section>
+    </main>
+
+    <section id="features" class="features">
+      <article class="info-card"><i class="fa-solid fa-layer-group"></i><h3 data-i18n="feature1Title">Bölmə-bölmə platformalar</h3><p data-i18n="feature1Text">YouTube, TikTok, Instagram, Pinterest və Facebook üçün ayrıca seçim axını.</p></article>
+      <article class="info-card"><i class="fa-solid fa-cookie-bite"></i><h3 data-i18n="feature2Title">Ayrı cookies faylları</h3><p data-i18n="feature2Text">Hər platforma üçün Netscape cookies.txt placeholder-ları və yt-dlp inteqrasiyası.</p></article>
+      <article class="info-card"><i class="fa-solid fa-chart-line"></i><h3 data-i18n="feature3Title">Canlı progress</h3><p data-i18n="feature3Text">Yükləmə zamanı progress bar, faiz, sürət və status göstəricisi.</p></article>
+    </section>
+
+    <footer class="footer">© <span id="year"></span> HUSEVN DOWNLOADER · Netlify Ready</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
