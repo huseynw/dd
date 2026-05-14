@@ -1,0 +1,2 @@
+# Netscape HTTP Cookie File
+# Replace this placeholder with exported Pinterest cookies in Netscape format.
